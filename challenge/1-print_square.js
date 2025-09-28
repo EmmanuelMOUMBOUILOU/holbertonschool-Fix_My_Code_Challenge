@@ -2,8 +2,8 @@
 
 const size = parseInt(process.argv[2], 10);
 
-if (!size || isNaN(size) || size < 1) {
-  console.log("Missing size");
+if (process.argv.length <= 2 || isNaN(size)) {
+  console.log('Missing size');
   process.exit(1);
 }
 
