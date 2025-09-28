@@ -1,14 +1,12 @@
 #!/usr/bin/env ruby
 
-numbers = []
-strings = []
+# Get all arguments from the command line
+args = ARGV
 
-ARGV.each do |arg|
-  if arg.match?(/\A-?\d+\z/)
-    numbers << arg.to_i
-  else
-    strings << arg
-  end
+# Sort them using default string comparison (ASCII-based)
+sorted = args.sort
+
+# Print each sorted item on its own line
+sorted.each do |arg|
+  puts arg
 end
-
-(numbers.sort + strings.sort).each { |x| puts x }
