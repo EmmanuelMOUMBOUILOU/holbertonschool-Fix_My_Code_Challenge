@@ -1,13 +1,12 @@
 #!/usr/bin/node
 
-const size = parseInt(process.argv[2]);
+const size = parseInt(process.argv[2], 10);
 
-if (isNaN(size) || size <= 0) {
-  console.log("Usage: ./1-print_square.js <positive integer>");
+if (!size || isNaN(size) || size < 1) {
+  console.log("Missing size");
   process.exit(1);
 }
 
-const line = "#".repeat(size);
 for (let i = 0; i < size; i++) {
-  console.log(line);
+  console.log('#'.repeat(size));
 }
