@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import sys
 
 def fizzbuzz(n):
@@ -11,14 +11,15 @@ def fizzbuzz(n):
             print("Buzz", end=" ")
         else:
             print(i, end=" ")
+    print()  # Pour finir par un saut de ligne
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: ./0-fizzbuzz.py <number>")
+        print(f"Usage: {sys.argv[0]} <number>")
         sys.exit(1)
     try:
-        number = int(sys.argv[1])
-        fizzbuzz(number)
+        n = int(sys.argv[1])
     except ValueError:
-        print("Please enter a valid integer.")
+        print("Please provide an integer")
         sys.exit(1)
+    fizzbuzz(n)
